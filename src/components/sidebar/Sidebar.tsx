@@ -111,7 +111,7 @@ interface tabsProps {
 	// onClose: () => void;
 }
 
-const Tabs = ({ data, active, className, containerClassName, onClose }: tabsProps) => {
+const Tabs = ({ data, active, className, containerClassName }: tabsProps) => {
 	return (
 		<>
 			{data.map((item) => (
