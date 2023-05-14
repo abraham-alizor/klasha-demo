@@ -88,7 +88,7 @@ export const Sidebar = (props: sidebarProps) => {
 						/>
 						<Button
 							icons={QUESTION}
-							title='Support'
+							title='Hide panel'
 							bgColor={'bg-transparent'}
 							onClick={() => {}}
 							hoverColor={''}
