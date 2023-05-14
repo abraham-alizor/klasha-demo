@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import Typography from '../Typography';
 import { CHEVRON_LEFT, LOGO, QUESTION } from '../../assets';
 import Button from '../button';
+import { useMediaQuery } from '../../hooks';
 
 interface sidebarProps {
 	open: boolean;
@@ -43,7 +44,7 @@ export const Sidebar = (props: sidebarProps) => {
 								{...{
 									data: MainPages,
 									className: 'hover:font-medium',
-									// onClose: props.onClose,
+									onClose: props.onClose,
 									active: (item: SidebarDataTypes) => location.pathname === item.path,
 								}}
 							/>
@@ -56,7 +57,7 @@ export const Sidebar = (props: sidebarProps) => {
 								{...{
 									className: 'hover:font-medium',
 									data: acceptPayments,
-									// onClose: props.onClose,
+									onClose: props.onClose,
 									active: (item: SidebarDataTypes) => location.pathname === item.path,
 								}}
 							/>
@@ -68,7 +69,7 @@ export const Sidebar = (props: sidebarProps) => {
 							<Tabs
 								{...{
 									className: 'hover:font-medium',
-									// onClose: props.onClose,
+									onClose: props.onClose,
 									data: sendPayments,
 									active: (item: SidebarDataTypes) => location.pathname === item.path,
 								}}
@@ -108,14 +109,21 @@ interface tabsProps {
 	active: any;
 	className?: string;
 	containerClassName?: string;
-	// onClose: () => void;
+	onClose: () => void;
 }
 
-const Tabs = ({ data, active, className, containerClassName }: tabsProps) => {
+const Tabs = ({ data, active, className, containerClassName, onClose }: tabsProps) => {
+	const isMobileView = useMediaQuery('(max-width: 640px)');
+	const isTabletView = useMediaQuery('(max-width: 840px)');
+
 	return (
 		<>
 			{data.map((item) => (
-				<li key={item.id} className={`${containerClassName}`}>
+				<li
+					onClick={isMobileView || isTabletView ? onClose : () => {}}
+					key={item.id}
+					className={`${containerClassName}`}
+				>
 					<Link to={item.path} className='hover:text-black'>
 						<div
 							className={` flex  w-full items-center py-2 px-5 ${className} ${
