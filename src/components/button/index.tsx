@@ -9,7 +9,7 @@ function Button(props: buttonPropTypes) {
 				className={`transition ease-in-out delay-150hover:-translate-y-1 hover:scale-110 py-2 px-3 flex justify-center items-center rounded-[10px] ${props.bgColor}  ${props.hoverColor} ${props.textColor} duration-300 text-xs ${props.className}`}
 			>
 				{props.icons && (
-					<img src={props.icons} alt={props.icons} className={`h-5  mr-4 ${props.iconClassName}`} />
+					<img src={props.icons} alt={props.icons} className={`h-4  mr-4 ${props.iconClassName}`} />
 				)}
 				{props.title}
 			</button>
