@@ -3,7 +3,7 @@ import { acceptPayments, MainPages, sendPayments, SidebarDataTypes } from './Sid
 import { Transition } from '@headlessui/react';
 import { useLocation } from 'react-router-dom';
 import Typography from '../Typography';
-import { LOGO, QUESTION } from '../../assets';
+import { CHEVRON_LEFT, LOGO, QUESTION } from '../../assets';
 import Button from '../button';
 
 interface sidebarProps {
@@ -87,7 +87,7 @@ export const Sidebar = (props: sidebarProps) => {
 							className={'mb-2 rounded-[39px]'}
 						/>
 						<Button
-							icons={QUESTION}
+							icons={CHEVRON_LEFT}
 							title='Hide panel'
 							bgColor={'bg-transparent'}
 							onClick={() => {}}
