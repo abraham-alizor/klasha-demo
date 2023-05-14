@@ -56,7 +56,7 @@ export const Sidebar = (props: sidebarProps) => {
 								{...{
 									className: 'hover:font-medium',
 									data: acceptPayments,
-									onClose: props.onClose,
+									// onClose: props.onClose,
 									active: (item: SidebarDataTypes) => location.pathname === item.path,
 								}}
 							/>
@@ -68,7 +68,7 @@ export const Sidebar = (props: sidebarProps) => {
 							<Tabs
 								{...{
 									className: 'hover:font-medium',
-									onClose: props.onClose,
+									// onClose: props.onClose,
 									data: sendPayments,
 									active: (item: SidebarDataTypes) => location.pathname === item.path,
 								}}
@@ -108,14 +108,14 @@ interface tabsProps {
 	active: any;
 	className?: string;
 	containerClassName?: string;
-	onClose: () => void;
+	// onClose: () => void;
 }
 
 const Tabs = ({ data, active, className, containerClassName, onClose }: tabsProps) => {
 	return (
 		<>
 			{data.map((item) => (
-				<li onClick={onClose} key={item.id} className={`${containerClassName}`}>
+				<li key={item.id} className={`${containerClassName}`}>
 					<Link to={item.path} className='hover:text-black'>
 						<div
 							className={` flex  w-full items-center py-2 px-5 ${className} ${
