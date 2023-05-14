@@ -88,6 +88,7 @@ export const Sidebar = (props: sidebarProps) => {
 						/>
 						<Button
 							icons={CHEVRON_LEFT}
+							iconClassName='h-[0.9rem] w-3'
 							title='Hide panel'
 							bgColor={'bg-transparent'}
 							onClick={() => {}}
@@ -117,7 +118,7 @@ const Tabs = ({ data, active, className, containerClassName, onClose }: tabsProp
 				<li onClick={onClose} key={item.id} className={`${containerClassName}`}>
 					<Link to={item.path} className='hover:text-black'>
 						<div
-							className={` flex w-full items-center py-2 px-5 ${className} ${
+							className={` flex  w-full items-center py-2 px-5 ${className} ${
 								active(item) ? 'border-r-8 border-tertiary text-[#EF2C5A] font-medium' : ''
 							}`}
 						>
