@@ -43,7 +43,7 @@ export const Sidebar = (props: sidebarProps) => {
 								{...{
 									data: MainPages,
 									className: 'hover:font-medium',
-									onClose: props.onClose,
+									// onClose: props.onClose,
 									active: (item: SidebarDataTypes) => location.pathname === item.path,
 								}}
 							/>
